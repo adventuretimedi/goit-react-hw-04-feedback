@@ -14,9 +14,8 @@ const App = () => {
 
   const countTotalFeedback = () => good + neutral + bad;
 
-  const countPositiveFeedbackPercentage = () => {
-    return (good / countTotalFeedback()) * 100;
-  };
+  const countPositiveFeedbackPercentage = () =>
+    (good / countTotalFeedback()) * 100;
 
   // самий основний, базовий.
   // E:this.setState(prevState) --> setGood(Good)
@@ -58,7 +57,7 @@ const App = () => {
             neutral={neutral}
             bad={bad}
             total={countTotalFeedback()}
-            positivePercentage={countPositiveFeedbackPercentage}
+            positivePercentage={countPositiveFeedbackPercentage()}
           />
         ) : (
           <Notification message="No feedback given" />
