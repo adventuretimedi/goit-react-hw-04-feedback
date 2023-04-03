@@ -1,21 +1,28 @@
 import PropTypes from 'prop-types';
 
-export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
-    return (
-        <ul style={{listStyle: "none"}} >
-            <li>Good: { good }</li>
-            <li>Neutral: { neutral }</li>
-            <li>Bad: { bad }</li>
-            <li>Total: { total }</li>
-            <li>Positive feedback: { positivePercentage.toFixed(0) }%</li>
-          </ul>
-    )
-}
+export const Statistics = ({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) => {
+  return (
+    <ul style={{ listStyle: 'none' }}>
+      <li>Good: {good}</li>
+      <li>Neutral: {neutral}</li>
+      <li>Bad: {bad}</li>
+      <li>Total: {total}</li>
+      {/* {console.log(positivePercentage ?? 0)} */}
+      <li>Positive feedback: {positivePercentage().toFixed(0)}%</li>
+    </ul>
+  );
+};
 
 Statistics.propTypes = {
-    good: PropTypes.number,
-    neutral: PropTypes.number,
-    bad: PropTypes.number,
-    total: PropTypes.number,
-    positivePercentage: PropTypes.number,
-}
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.func,
+};
