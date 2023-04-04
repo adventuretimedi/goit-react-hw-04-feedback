@@ -13,8 +13,7 @@ export const Statistics = ({
       <li>Neutral: {neutral}</li>
       <li>Bad: {bad}</li>
       <li>Total: {total}</li>
-      {/* {console.log(positivePercentage ?? 0)} */}
-      <li>Positive feedback: {positivePercentage().toFixed(0)}%</li>
+      <li>Positive feedback: {positivePercentage.toFixed(0)}%</li>
     </ul>
   );
 };
@@ -24,5 +23,5 @@ Statistics.propTypes = {
   neutral: PropTypes.number,
   bad: PropTypes.number,
   total: PropTypes.number,
-  positivePercentage: PropTypes.func,
+  positivePercentage: PropTypes.number,
 };
